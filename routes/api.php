@@ -4,8 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HobbyController;
 
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users', [UserController::class, 'store']);
+Route::prefix('users')->controller(UserController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::post('/', 'store');
+});
 
-Route::post('/hobbies', [HobbyController::class, 'store']);
-Route::delete('/hobbies/{id}', [HobbyController::class, 'destroy']);
+Route::prefix('hobbies')->controller(HobbyController::class)->group(function () {
+    Route::post('/', 'store');
+    Route::delete('/{id}', 'destroy');
+});
