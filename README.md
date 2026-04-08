@@ -106,13 +106,10 @@ composer install
 Salin file `.env.example` menjadi `.env`:
 
 ```bash
-cp .env.example .env
-```
-
-Atur koneksi database:
-
-```
-DB_DATABASE=nama_database
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_laravel_intern
 DB_USERNAME=root
 DB_PASSWORD=
 ```
