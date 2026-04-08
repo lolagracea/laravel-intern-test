@@ -30,30 +30,35 @@ Sistem memungkinkan satu user memiliki banyak hobi (_one-to-many relationship_),
 - Menambahkan hobi untuk user tertentu
 - Menghapus hobi berdasarkan ID
 
----
+# Base URL
 
-## Endpoint API
-
-| Method | Endpoint            | Deskripsi                           |
-| ------ | ------------------- | ----------------------------------- |
-| GET    | `/api/users`        | Menampilkan semua user beserta hobi |
-| POST   | `/api/users`        | Menambahkan user baru               |
-| POST   | `/api/hobbies`      | Menambahkan hobi ke user            |
-| DELETE | `/api/hobbies/{id}` | Menghapus hobi                      |
-
----
-
-## Format Request & Response
-
-### 🔹 1. Menampilkan Semua User
-
-**Endpoint:**
-
-```http
-GET /api/users
+```
+http://localhost:8000/api
 ```
 
-**Response:**
+---
+
+# Get All Users
+
+- URL
+
+    ```
+    /users
+    ```
+
+- Method
+
+    ```
+    GET
+    ```
+
+- Headers
+
+    ```
+    Accept: application/json
+    ```
+
+- Response
 
 ```json
 {
@@ -76,15 +81,35 @@ GET /api/users
 
 ---
 
-### 🔹 2. Menambahkan User
+# Add New User
 
-**Endpoint:**
+- URL
 
-```http
-POST /api/users
-```
+    ```
+    /users
+    ```
 
-**Request:**
+- Method
+
+    ```
+    POST
+    ```
+
+- Headers
+
+    ```
+    Content-Type: application/json
+    Accept: application/json
+    ```
+
+- Request Body
+
+    ```
+    nama        as string
+    email       as string
+    ```
+
+- Example Request
 
 ```json
 {
@@ -93,7 +118,7 @@ POST /api/users
 }
 ```
 
-**Response:**
+- Response
 
 ```json
 {
@@ -108,15 +133,35 @@ POST /api/users
 
 ---
 
-### 🔹 3. Menambahkan Hobby
+# Add New Hobby
 
-**Endpoint:**
+- URL
 
-```http
-POST /api/hobbies
-```
+    ```
+    /hobbies
+    ```
 
-**Request:**
+- Method
+
+    ```
+    POST
+    ```
+
+- Headers
+
+    ```
+    Content-Type: application/json
+    Accept: application/json
+    ```
+
+- Request Body
+
+    ```
+    nama_hobi   as string
+    user_id     as integer
+    ```
+
+- Example Request
 
 ```json
 {
@@ -125,7 +170,7 @@ POST /api/hobbies
 }
 ```
 
-**Response:**
+- Response
 
 ```json
 {
@@ -135,6 +180,43 @@ POST /api/hobbies
         "nama_hobi": "Membaca",
         "user_id": 1
     }
+}
+```
+
+---
+
+# Delete Hobby
+
+- URL
+
+    ```
+    /hobbies/{id}
+    ```
+
+- Method
+
+    ```
+    DELETE
+    ```
+
+- Headers
+
+    ```
+    Accept: application/json
+    ```
+
+- Example
+
+    ```
+    DELETE /hobbies/1
+    ```
+
+- Response
+
+```json
+{
+    "success": true,
+    "message": "Hobby berhasil dihapus"
 }
 ```
 
