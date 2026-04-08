@@ -119,15 +119,7 @@ DB_PASSWORD=
 
 ---
 
-### 4. Generate App Key
-
-```bash
-php artisan key:generate
-```
-
----
-
-### 5. Jalankan Migration
+### 4. Jalankan Migration
 
 ```bash
 php artisan migrate
@@ -135,25 +127,11 @@ php artisan migrate
 
 ---
 
-### 6. Jalankan Server
+### 5. Jalankan Server
 
 ```bash
 php artisan serve
 ```
-
----
-
-## Keamanan (Security)
-
-API ini telah dilengkapi dengan mekanisme **Rate Limiting** untuk membatasi jumlah request:
-
-- Maksimal: **1000 request per jam**
-- Berdasarkan: **User (jika login) atau IP Address**
-
-Tujuan:
-
-- Mencegah abuse
-- Menjaga stabilitas server
 
 ---
 
@@ -178,24 +156,8 @@ Pengujian dapat dilakukan menggunakan:
 
 ---
 
-## Catatan Pengembangan
-
-Beberapa peningkatan yang dapat dilakukan untuk pengembangan lebih lanjut:
-
-- Menggunakan **Form Request** untuk validasi
-- Implementasi **API Resource** untuk response
-- Menambahkan **pagination**
-- Penerapan **Service Layer**
-- Implementasi **Authentication (Sanctum/JWT)**
-
----
-
 ## Author
 
 Dikembangkan sebagai bagian dari **Laravel Backend Intern Test**.
 
 ---
-
-## Kesimpulan
-
-Proyek ini menunjukkan pemahaman dasar hingga menengah dalam pengembangan backend menggunakan Laravel, dengan implementasi fitur yang sesuai kebutuhan serta perhatian terhadap aspek keamanan dan struktur kode.
