@@ -45,7 +45,44 @@ Sistem memungkinkan satu user memiliki banyak hobi (_one-to-many relationship_),
 
 ## Format Request & Response
 
-### Tambah User
+### 🔹 1. Menampilkan Semua User
+
+**Endpoint:**
+
+```http
+GET /api/users
+```
+
+**Response:**
+
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "nama": "John Doe",
+            "email": "john@example.com",
+            "hobbies": [
+                {
+                    "id": 1,
+                    "nama_hobi": "Membaca"
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+
+### 🔹 2. Menambahkan User
+
+**Endpoint:**
+
+```http
+POST /api/users
+```
 
 **Request:**
 
@@ -56,9 +93,28 @@ Sistem memungkinkan satu user memiliki banyak hobi (_one-to-many relationship_),
 }
 ```
 
+**Response:**
+
+```json
+{
+    "success": true,
+    "data": {
+        "id": 1,
+        "nama": "John Doe",
+        "email": "john@example.com"
+    }
+}
+```
+
 ---
 
-### Tambah Hobby
+### 🔹 3. Menambahkan Hobby
+
+**Endpoint:**
+
+```http
+POST /api/hobbies
+```
 
 **Request:**
 
@@ -69,14 +125,41 @@ Sistem memungkinkan satu user memiliki banyak hobi (_one-to-many relationship_),
 }
 ```
 
----
-
-### Response Umum
+**Response:**
 
 ```json
 {
-  "success": true,
-  "data": ...
+    "success": true,
+    "data": {
+        "id": 1,
+        "nama_hobi": "Membaca",
+        "user_id": 1
+    }
+}
+```
+
+---
+
+### 🔹 4. Menghapus Hobby
+
+**Endpoint:**
+
+```http
+DELETE /api/hobbies/{id}
+```
+
+**Contoh:**
+
+```http
+DELETE /api/hobbies/1
+```
+
+**Response:**
+
+```json
+{
+    "success": true,
+    "message": "Hobby berhasil dihapus"
 }
 ```
 
@@ -87,7 +170,7 @@ Sistem memungkinkan satu user memiliki banyak hobi (_one-to-many relationship_),
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/lolagracea/laravel-intern-test.git
 cd laravel-intern-test
 ```
 
