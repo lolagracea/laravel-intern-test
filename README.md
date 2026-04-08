@@ -320,6 +320,6 @@ Pengujian dapat dilakukan menggunakan:
 
 ## Author
 
-Dikembangkan sebagai bagian dari **Laravel Backend Intern Test**.
+Dikembangkan sebagai bagian dari **Laravel Backend Intern Test** oleh Lola Tampubolon.
 
 ---
